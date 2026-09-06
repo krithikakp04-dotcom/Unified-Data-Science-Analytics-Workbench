@@ -1,21 +1,43 @@
 import pandas as pd
+from preprocessing import preprocess_data
 
-# Load the dataset
+# ==================================
+# LOAD DATASET
+# ==================================
 df = pd.read_csv("housing.csv")
 
-# Display first 5 rows
-print("FIRST 5 ROWS OF THE DATASET:")
-print(df.head())
+print("=" * 50)
+print("UNIFIED DATA SCIENCE WORKBENCH")
+print("=" * 50)
 
-# Display dataset information
-print("\nDATASET INFORMATION:")
-print(df.info())
+print("\nDATASET LOADED SUCCESSFULLY!")
 
-# Display dataset shape
-print("\nDATASET SHAPE:")
-print("Rows:", df.shape[0])
-print("Columns:", df.shape[1])
+print("\nOriginal Dataset Shape:")
+print(df.shape)
 
-# Display column names
-print("\nCOLUMN NAMES:")
-print(df.columns.tolist())
+# ==================================
+# DATA PROFILING
+# ==================================
+print("\nCOLUMN DATA TYPES:")
+print(df.dtypes)
+
+print("\nMISSING VALUES:")
+print(df.isnull().sum())
+
+print("\nDUPLICATE ROWS:")
+print(df.duplicated().sum())
+
+# ==================================
+# DATA PREPROCESSING
+# ==================================
+df_cleaned = preprocess_data(df)
+
+# ==================================
+# SAVE CLEANED DATASET
+# ==================================
+df_cleaned.to_csv("cleaned_housing.csv", index=False)
+
+print("\nCleaned dataset saved as: cleaned_housing.csv")
+
+print("\nFirst 5 rows of cleaned dataset:")
+print(df_cleaned.head())
