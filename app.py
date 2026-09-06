@@ -1,6 +1,7 @@
 import pandas as pd
 from preprocessing import preprocess_data
 from eda import perform_eda
+from statistics_analysis import statistical_analysis, generate_insights
 
 # ==================================
 # LOAD DATASET
@@ -47,3 +48,12 @@ correlation = perform_eda(df_cleaned)
 
 print("\nCORRELATION MATRIX:")
 print(correlation)
+# ==================================
+# STATISTICAL ANALYSIS
+# ==================================
+statistics = statistical_analysis(df_cleaned)
+
+# ==================================
+# AUTOMATIC INSIGHT GENERATION
+# ==================================
+insights = generate_insights(df_cleaned)

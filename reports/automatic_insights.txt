@@ -1,0 +1,17 @@
+1. longitude: Mean = -119.57, Median = -118.49
+2. latitude: Mean = 35.63, Median = 34.26
+3. housing_median_age: Mean = 28.64, Median = 29.00
+4. total_rooms: Mean = 2635.76, Median = 2127.00
+5. total_bedrooms: Mean = 536.84, Median = 435.00
+6. population: Mean = 1425.48, Median = 1166.00
+7. households: Mean = 499.54, Median = 409.00
+8. median_income: Mean = 3.87, Median = 3.53
+9. median_house_value: Mean = 206855.82, Median = 179700.00
+10. longitude and latitude have correlation = -0.92
+11. total_rooms and total_bedrooms have correlation = 0.93
+12. total_rooms and population have correlation = 0.86
+13. total_rooms and households have correlation = 0.92
+14. total_bedrooms and population have correlation = 0.87
+15. total_bedrooms and households have correlation = 0.97
+16. population and households have correlation = 0.91
+17. median_income and median_house_value have correlation = 0.69
