@@ -4,6 +4,7 @@ from eda import perform_eda
 from statistics_analysis import statistical_analysis, generate_insights
 from automl import train_and_compare_models
 from visualization import plot_model_comparison, plot_actual_vs_predicted
+from monitoring import monitor_model
 # ==================================
 # LOAD DATASET
 # ==================================
@@ -78,3 +79,9 @@ plot_actual_vs_predicted(
 )
 
 print("\nMODEL VISUALIZATION COMPLETED!")
+# ==================================
+# MODEL MONITORING
+# ==================================
+monitoring_data = monitor_model(model_results)
+
+print("\nMODEL MONITORING COMPLETED!")
