@@ -1,5 +1,6 @@
 import pandas as pd
 from preprocessing import preprocess_data
+from eda import perform_eda
 
 # ==================================
 # LOAD DATASET
@@ -39,5 +40,10 @@ df_cleaned.to_csv("cleaned_housing.csv", index=False)
 
 print("\nCleaned dataset saved as: cleaned_housing.csv")
 
-print("\nFirst 5 rows of cleaned dataset:")
-print(df_cleaned.head())
+# ==================================
+# EXPLORATORY DATA ANALYSIS
+# ==================================
+correlation = perform_eda(df_cleaned)
+
+print("\nCORRELATION MATRIX:")
+print(correlation)
