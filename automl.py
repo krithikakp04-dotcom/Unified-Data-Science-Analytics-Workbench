@@ -105,6 +105,8 @@ def train_and_compare_models(df):
     best_model = None
     best_model_name = None
     best_r2 = float("-inf")
+    best_y_test = None
+    best_predictions = None
 
     # ==================================
     # 6. TRAIN AND EVALUATE MODELS
@@ -163,6 +165,8 @@ def train_and_compare_models(df):
             best_r2 = r2
             best_model = pipeline
             best_model_name = name
+            best_y_test = y_test
+            best_predictions = predictions
 
     # ==================================
     # 7. CREATE RESULTS DATAFRAME
@@ -200,4 +204,9 @@ def train_and_compare_models(df):
     print("\nBest model saved as: best_model.pkl")
     print("Results saved as: reports/model_comparison.csv")
 
-    return best_model, results_df
+    return (
+    best_model,
+    results_df,
+    best_y_test,
+    best_predictions
+)

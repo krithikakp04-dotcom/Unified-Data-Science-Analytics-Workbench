@@ -3,6 +3,7 @@ from preprocessing import preprocess_data
 from eda import perform_eda
 from statistics_analysis import statistical_analysis, generate_insights
 from automl import train_and_compare_models
+from visualization import plot_model_comparison, plot_actual_vs_predicted
 # ==================================
 # LOAD DATASET
 # ==================================
@@ -60,9 +61,20 @@ insights = generate_insights(df_cleaned)
 # ==================================
 # AUTOMATIC MACHINE LEARNING
 # ==================================
-best_model, model_results = train_and_compare_models(
+best_model, model_results, y_test, predictions = train_and_compare_models(
     df_cleaned
 )
 
 print("\nFINAL MODEL RESULTS:")
 print(model_results)
+# ==================================
+# MODEL VISUALIZATION
+# ==================================
+plot_model_comparison(model_results)
+
+plot_actual_vs_predicted(
+    y_test,
+    predictions
+)
+
+print("\nMODEL VISUALIZATION COMPLETED!")
