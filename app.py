@@ -5,10 +5,11 @@ from statistics_analysis import statistical_analysis, generate_insights
 from automl import train_and_compare_models
 from visualization import plot_model_comparison, plot_actual_vs_predicted
 from monitoring import monitor_model
+from data_ingestion import ingest_data
 # ==================================
 # LOAD DATASET
 # ==================================
-df = pd.read_csv("housing.csv")
+df = ingest_data("housing.csv")
 
 print("=" * 50)
 print("UNIFIED DATA SCIENCE WORKBENCH")

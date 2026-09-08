@@ -15,7 +15,38 @@ page_icon="📊",
 layout="wide"
 )
 
+# ==================================
+# LANDING PAGE
+# ==================================
+
 st.title("📊 Unified Data Science & Analytics Workbench")
+
+st.subheader("Project Details")
+
+col1, col2 = st.columns(2)
+
+with col1:
+    st.info(
+        """
+        **Project Topic**
+
+        Unified Data Science & Analytics Workbench
+        """
+    )
+
+with col2:
+    st.info(
+        """
+        **Student Details**
+
+        **Full Name:** Krithika K P
+
+        **Registered Email ID:** krithikakp04@gmail.com
+        """
+    )
+
+st.markdown("---")
+
 st.write("An End-to-End Automated Data Science Platform")
 
 # ==================================
